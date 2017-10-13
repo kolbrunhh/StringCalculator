@@ -12,8 +12,8 @@ public class Calculator
 		{
 			if(text.contains(","))
 			{
-				String numbers[] = text.split(",");
-				return sum(numbers);
+				String newLine = ",|\n";
+				return sum(text.split(newLine));
 			}
 			return 1;
 		}

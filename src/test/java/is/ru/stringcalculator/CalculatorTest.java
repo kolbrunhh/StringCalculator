@@ -34,4 +34,10 @@ public class CalculatorTest
 	{
 		assertEquals(100, Calculator.add("10,5,2,3,20,15,6,4,25,10"));
 	}
+
+	@Test
+	public void testNewLineBetweenNumbers()
+	{
+		assertEquals(6, Calculator.add("1\n2,3"));
+	}
 }
