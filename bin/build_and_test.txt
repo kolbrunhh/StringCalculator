@@ -1,0 +1,4 @@
+./bin/clean.txt
+./bin/compile.txt
+./bin/compile_test.txt
+./bin/uni_test.txt
