@@ -32,19 +32,20 @@ public class Calculator
 		List<Integer> negativity = new ArrayList<Integer>();
 		for(String number : numbers)
 		{
-			if(toInt(number) < 0)
+			int i = toInt(number);
+			if(0 > i)
 			{
-				negativity.add(toInt(number));
+				negativity.add(i);
 			}
 			else
 			{
-				total  += toInt(number);
+				total  += i;
 			}
 		}
 
 		if(negativity.size() > 0)
 		{
-			throw new IllegalArgumentException("Negatives not allowed:" + negativity);
+			throw new IllegalArgumentException("Negatives not allowed: " + negativity);
 		}
 
 		return total;
