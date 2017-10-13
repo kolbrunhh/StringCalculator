@@ -41,10 +41,22 @@ public class CalculatorTest
 		assertEquals(6, Calculator.add("1\n2,3"));
 	}
 
+	@Test
+	public void testAnotherNewLineBetweenNumbers()
+	{
+		assertEquals(6, Calculator.add("1,2,3\n"));
+	}
+
 	@Test(expected = IllegalArgumentException.class)
 	public void TestForExpectedExceptionWithNegativity()
 	{
 		Calculator.add("1,-2,3,4");
+	}
+
+	@Test(expected = IllegalArgumentException.class)
+	public void TestForAnotherExpectedExceptionWithNegativity()
+	{
+		Calculator.add("-10,6,100");
 	}
 
 	@Test
