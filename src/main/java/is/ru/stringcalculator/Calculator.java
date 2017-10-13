@@ -26,9 +26,11 @@ public class Calculator
 	{
 		int total = 0;
 		List<Integer> negativity = new ArrayList<Integer>();
+
 		for(String number : numbers)
 		{
 			int i = toInt(number);
+			
 			if(0 > i)
 			{
 				negativity.add(i);
@@ -50,7 +52,7 @@ public class Calculator
 		return total;
 	}
 
-	
+
 	private static int toInt(String number)
 	{
 		return Integer.parseInt(number);
