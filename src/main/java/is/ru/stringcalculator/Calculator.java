@@ -13,17 +13,13 @@ public class Calculator
 		}
 		else
 		{
-			if(text.contains(","))
+			if(text.contains(",") || text.contains("//"))
 			{
 				return sum(splitWords(text));
 			}
+
 			return 1;
 		}
-	}
-
-	private static int toInt(String number)
-	{
-		return Integer.parseInt(number);
 	}
 
 	private static int sum(String [] numbers)
@@ -54,9 +50,23 @@ public class Calculator
 		return total;
 	}
 
+	
+	private static int toInt(String number)
+	{
+		return Integer.parseInt(number);
+	}
+
 	private static String [] splitWords (String number)
 	{
-		String newLine = ",|\n";
-		return number.split(newLine);
+		String splitWord = ",|\n";
+		
+		if(number.startsWith("//"))
+		{
+			int sP = number.indexOf("//") + 2;
+			splitWord = splitWord + "|" + number.substring(sP, sP + 1);
+			number = number.substring(sP + 2);
+		}
+
+		return number.split(splitWord);
 	}
 }

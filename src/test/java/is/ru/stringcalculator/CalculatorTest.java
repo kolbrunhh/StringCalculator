@@ -52,4 +52,16 @@ public class CalculatorTest
 	{
 		assertEquals(5, Calculator.add("2000,1001,2,3"));
 	}
+
+	@Test
+	public void testDifferentDelimiter()
+	{
+		assertEquals(3, Calculator.add("//;\n1;2"));
+	}
+
+	@Test
+	public void testAnotherDifferentDelimiter()
+	{
+		assertEquals(5, Calculator.add("//!\n1!2!2"));
+	}
 }
