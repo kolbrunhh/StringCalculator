@@ -12,8 +12,7 @@ public class Calculator
 		{
 			if(text.contains(","))
 			{
-				String newLine = ",|\n";
-				return sum(text.split(newLine));
+				return sum(splitWords(text));
 			}
 			return 1;
 		}
@@ -32,5 +31,11 @@ public class Calculator
 				total  += toInt(number);
 		}
 		return total;
+	}
+
+	private static String [] splitWords (String number)
+	{
+		String newLine = ",|\n";
+		return number.split(newLine);
 	}
 }
