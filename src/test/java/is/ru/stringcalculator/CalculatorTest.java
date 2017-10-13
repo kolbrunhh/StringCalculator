@@ -46,4 +46,10 @@ public class CalculatorTest
 	{
 		Calculator.add("1,-2,3,4");
 	}
+
+	@Test
+	public void testNumbersLessThan1000()
+	{
+		assertEquals(5, Calculator.add("2000,1001,2,3"));
+	}
 }

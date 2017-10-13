@@ -39,7 +39,10 @@ public class Calculator
 			}
 			else
 			{
-				total  += i;
+				if(i <= 1000)
+				{
+					total  += i;
+				}
 			}
 		}
 
