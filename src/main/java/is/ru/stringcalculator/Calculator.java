@@ -13,7 +13,7 @@ public class Calculator
 		}
 		else
 		{
-			if(text.contains(",") || text.contains("//"))
+			if(text.contains(",") || text.contains("//") || text.contains("\n"))
 			{
 				return sum(splitWords(text));
 			}

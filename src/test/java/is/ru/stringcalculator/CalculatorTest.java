@@ -76,4 +76,10 @@ public class CalculatorTest
 	{
 		assertEquals(5, Calculator.add("//!\n1!2!2"));
 	}
+
+	@Test
+	public void testNewLinerBetweenNumbers()
+	{
+		assertEquals(16, Calculator.add("1\n2\n3\n10"));
+	}
 }
