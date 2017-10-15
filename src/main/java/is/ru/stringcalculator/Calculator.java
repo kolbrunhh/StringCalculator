@@ -15,7 +15,7 @@ public class Calculator
 		{
 			if(text.contains(",") || text.contains("//") || text.contains("\n"))
 			{
-				return sum(splitWords(text));
+				return sum(splitNum(text));
 			}
 
 			return 1;
@@ -24,7 +24,7 @@ public class Calculator
 
 	private static int sum(String [] numbers)
 	{
-		int total = 0;
+		int sum = 0;
 		List<Integer> negativity = new ArrayList<Integer>();
 
 		for(String number : numbers)
@@ -39,7 +39,7 @@ public class Calculator
 			{
 				if(i <= 1000)
 				{
-					total  += i;
+					sum  += i;
 				}
 			}
 		}
@@ -49,7 +49,7 @@ public class Calculator
 			throw new IllegalArgumentException("Negatives not allowed: " + negativity);
 		}
 
-		return total;
+		return sum;
 	}
 
 
@@ -58,17 +58,17 @@ public class Calculator
 		return Integer.parseInt(number);
 	}
 
-	private static String [] splitWords (String number)
+	private static String [] splitNum(String number)
 	{
-		String splitWord = ",|\n";
+		String splitNum = ",|\n";
 		
 		if(number.startsWith("//"))
 		{
 			int sP = number.indexOf("//") + 2;
-			splitWord = splitWord + "|" + number.substring(sP, sP + 1);
+			splitNum = splitNum + "|" + number.substring(sP, sP + 1);
 			number = number.substring(sP + 2);
 		}
 
-		return number.split(splitWord);
+		return number.split(splitNum);
 	}
 }
